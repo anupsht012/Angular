@@ -13,24 +13,4 @@ export class AppComponent {
 
   constructor(private appService:AppServiceService){}
 
-  formFields = {
-    email:'',
-    password:''
-  }
-
-  onFormSubmit(myForm:NgForm){
-    const email = myForm.value.email;
-    const password = myForm.value.password;
-
-this.appService.login(email, password).subscribe({
-  next: (res) => {
-    console.log(res);
-  },
-  error: (err) => {
-    console.log(err)
-  }
-})
-    // console.log(myForm);
-
-  }
 }
